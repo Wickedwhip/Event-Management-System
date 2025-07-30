@@ -1,0 +1,88 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Management Login & Signup</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 400px; margin: auto; }
+    input, button { width: 100%; padding: 8px; margin: 5px 0; }
+    .form-container { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; }
+    .message { color: green; margin-top: 10px; }
+    .error { color: red; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Signup</h2>
+  <div class="form-container">
+    <form id="signupForm">
+      <input type="text" id="signupName" placeholder="Name" required />
+      <input type="email" id="signupEmail" placeholder="Email" required />
+      <input type="password" id="signupPassword" placeholder="Password" required />
+      <button type="submit">Sign Up</button>
+    </form>
+    <div id="signupMessage"></div>
+  </div>
+
+  <h2>Login</h2>
+  <div class="form-container">
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <input type="password" id="loginPassword" placeholder="Password" required />
+      <button type="submit">Log In</button>
+    </form>
+    <div id="loginMessage"></div>
+  </div>
+
+  <script>
+    // Signup form submit
+    document.getElementById('signupForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('signupName').value;
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+
+      const res = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const data = await res.json();
+      const msgDiv = document.getElementById('signupMessage');
+      if (res.ok) {
+        msgDiv.textContent = data.message;
+        msgDiv.className = 'message';
+        e.target.reset();
+      } else {
+        msgDiv.textContent = data.message || 'Signup failed';
+        msgDiv.className = 'error';
+      }
+    });
+
+    // Login form submit
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await res.json();
+      const msgDiv = document.getElementById('loginMessage');
+      if (res.ok) {
+        msgDiv.textContent = data.message;
+        msgDiv.className = 'message';
+        e.target.reset();
+      } else {
+        msgDiv.textContent = data.message || 'Login failed';
+        msgDiv.className = 'error';
+      }
+    });
+  </script>
+</body>
+</html>

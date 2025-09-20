@@ -1,0 +1,74 @@
+Folder PATH listing
+Volume serial number is 04F6-2EFB
+C:.
+|   App.css
+|   App.jsx
+|   folder-structure.txt
+|   index.css
+|   main.jsx
+|   
++---assets
+|       react.svg
+|       
++---components
+|   +---admin
+|   |   |   Adminlayout.css
+|   |   |   AdminLayout.jsx
+|   |   |   Dashboard.css
+|   |   |   Dashboard.jsx
+|   |   |   HeaderBar.jsx
+|   |   |   LoginPage.jsx
+|   |   |   Sidebar.jsx
+|   |   |   
+|   |   +---Employees
+|   |   |       EmployeeForm.jsx
+|   |   |       EmployeesList.jsx
+|   |   |       
+|   |   +---Events
+|   |   |       EventForm.jsx
+|   |   |       EventsList.jsx
+|   |   |       
+|   |   +---Reports
+|   |   |       ReportsPage.jsx
+|   |   |       
+|   |   +---Settings
+|   |   |       SettingsPage.jsx
+|   |   |       
+|   |   +---Tasks
+|   |   |       TaskForm.jsx
+|   |   |       TaskList.jsx
+|   |   |       
+|   |   +---Tickets
+|   |   |       TicketForm.jsx
+|   |   |       TicketsList.jsx
+|   |   |       
+|   |   \---Users
+|   |           UsersOverview.jsx
+|   |           
+|   \---employee
+|       |   employee.css
+|       |   EmployeeDashboard.css
+|       |   EmployeeDashboard.jsx
+|       |   EmployeeHeaderBar.jsx
+|       |   EmployeeLayout.jsx
+|       |   EmployeeSidebar.jsx
+|       |   
+|       +---Events
+|       |       EventForm.jsx
+|       |       EventList.jsx
+|       |       
+|       +---Profile
+|       |       ProfilePage.jsx
+|       |       
+|       \---Tasks
+|               TaskForm.jsx
+|               TaskList.jsx
+|               
++---layouts
+|       AdminLayout.jsx
+|       AuthLayout.jsx
+|       
+\---styles
+        LoginPage.css
+        main.css
+        

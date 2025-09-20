@@ -1,0 +1,29 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #111827; /* dark base */
+  color: #f9fafb;
+}
+
+.sidebar {
+  width: 240px;
+  background: #1f2937;
+  padding: 20px;
+  border-right: 1px solid #374151;
+}
+
+.main-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.content-wrapper {
+  flex: 1;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.4);
+  overflow-y: auto;
+}
